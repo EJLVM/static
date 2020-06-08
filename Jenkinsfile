@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Upload to AWS') {
             steps {
-                withAWS(region:'us-east-1', credentials:'aws-static') {
+                withAWS(region:'us-east-1', credentials:'static') {
                     s3upload(
                         pathStyleAccessEnabled: true,
                         payloadSigningEnabled: true,
