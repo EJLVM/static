@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Upload to AWS') {
       steps {
-        withAWS(credentials: 'aws-static') {
-          s3Upload(bucket:'ud-jenkins-s3', file:'index.html', path:'index.html')
+        withAWS(region:'us-west-2', credentials:'aws-static') {
+          s3Upload(file:'index.html', bucket:'ud-jenkins-s3', path:'index.html')
         }
       }
     }
